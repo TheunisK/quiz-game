@@ -1,4 +1,5 @@
 import { React, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import '../styles/landingPage.css';
 
@@ -18,9 +19,9 @@ function LandingPage() {
         setUserDetails({
             ...userDetails, [name]: value
         });
-        console.log(userDetails);
     }
-
+    
+    console.log(userDetails);
 
     return (
         <div className="main-container">
@@ -32,23 +33,25 @@ function LandingPage() {
                     <form>
                         <div className='text-field'>
                             <input 
+                                name='username'
                                 type='text' 
                                 required
-                                onChange={handleChange()}
+                                onChange={(e) => handleChange(e)}
                             />
                             <label>Username</label>
                         </div>
                         <div className='text-field'>
                             <input 
+                                name='password'
                                 type='password' 
                                 required
-                                onChange={handleChange()}
+                                onChange={(e) => handleChange(e)}
                             />
                             <label>Password</label>
                         </div>
-                        <input type='submit' value='Login'/>
+                        <Link to='/setup'><input type='submit' value='Login'/></Link>
                         <h4>Don't have an account?</h4>
-                        <p>Sign Up HERE!</p>
+                        <p><Link to='/register'>Sign Up HERE!</Link></p>
                     </form>
                 </div>
                 </div>

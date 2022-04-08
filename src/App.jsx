@@ -18,11 +18,11 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        {/* <Route path='/re' element={<LandingPage />}/>
-        <Route path='/register' element={<Register />}/> */}
+        <Route path='/' element={<LandingPage />}/>
+        <Route path='/register' element={<Register />}/>
         <Route path='/quiz' element={<QuizPage category={category} questions={questions}/>}/>
         <Route path='/getready' element={<GetReady category={category} setQuestions={setQuestions}/>}/>
-        <Route path='/' element={<Setup setCategory={setCategory}/>}/>
+        <Route path='/setup' element={<Setup setCategory={setCategory}/>}/>
       </Routes>
     </div>
   );

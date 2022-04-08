@@ -18,7 +18,8 @@ function QuizPage(props) {
         elapsedTime: '00:00:00'
     }
 
-    let correct = false;
+    let gameOver = 'game-over'
+    const [isOver, setIsOver] = useState(null)
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(firstIndex);
     const [answers, setAnswers] = useState([]);
@@ -63,10 +64,10 @@ function QuizPage(props) {
     console.log(quizDetails);
 
     return(
-        <div className="main-container">
+        <div className="main-container" id={isOver}>
             <Header />
             <div className="quiz-main">
-                <TimerBar />
+                <TimerBar setIsOver={setIsOver}/>
                 <div className='question'>
                     {questions[currentQuestionIndex] && <h2>{questions[currentQuestionIndex].question}</h2>}
                 </div>
