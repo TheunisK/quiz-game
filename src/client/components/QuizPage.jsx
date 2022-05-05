@@ -18,9 +18,6 @@ function QuizPage(props) {
         elapsedTime: '00:00:00'
     }
 
-    let gameOver = 'game-over'
-    const [isOver, setIsOver] = useState(null)
-
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(firstIndex);
     const [answers, setAnswers] = useState([]);
     const [numberOfQuestions, setNumberOfQuestions] = useState(0);
@@ -53,7 +50,6 @@ function QuizPage(props) {
         const userAnswer = e.target.value.slice(3);
         const realAnswer = questions[currentQuestionIndex].correctAnswer;
         if (userAnswer === realAnswer) {
-            // setCorrect(true);
             setCurrentQuestionIndex(currentQuestionIndex + 1);
             setQuizDetails({
                 ...quizDetails, streak: quizDetails.streak + 1
@@ -64,10 +60,10 @@ function QuizPage(props) {
     console.log(quizDetails);
 
     return(
-        <div className="main-container" id={isOver}>
+        <div className="main-container" >
             <Header />
             <div className="quiz-main">
-                <TimerBar setIsOver={setIsOver}/>
+                <TimerBar />
                 <div className='question'>
                     {questions[currentQuestionIndex] && <h2>{questions[currentQuestionIndex].question}</h2>}
                 </div>
