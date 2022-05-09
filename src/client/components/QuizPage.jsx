@@ -24,11 +24,10 @@ function QuizPage(props) {
     const [quizDetails, setQuizDetails] = useState(emptyQuizDetails);
 
     const shuffleAnswers = (answers) => {
-        const shuffled = answers.sort((a, b) => 0.5 - Math.random());
-        return shuffled;
+        return answers.sort((a, b) => 0.5 - Math.random());
     }
+    
     const getAnswers = (question) => {
-        console.log(question);
         let answers = [];
         answers.push(question.correctAnswer);
         for (let i = 0; i < question.incorrectAnswers.length; i++) {

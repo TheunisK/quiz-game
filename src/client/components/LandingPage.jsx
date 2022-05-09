@@ -34,7 +34,8 @@ function LandingPage() {
                         <div className='text-field'>
                             <input 
                                 name='username'
-                                type='text' 
+                                type='text'
+                                value={userDetails.username} 
                                 required
                                 onChange={(e) => handleChange(e)}
                             />
@@ -43,7 +44,8 @@ function LandingPage() {
                         <div className='text-field'>
                             <input 
                                 name='password'
-                                type='password' 
+                                type='password'
+                                value={userDetails.password} 
                                 required
                                 onChange={(e) => handleChange(e)}
                             />
